@@ -1,0 +1,72 @@
+/*Nathan:YanNanhao */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.todo-app {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+#todoInput {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#addBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addBtn:hover {
+    background-color: #0056b3;
+}
+
+#todoList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#todoList li {
+    background-color: #e9ecef;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#todoList li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #dc3545;
+}
+
+#todoList li button:hover {
+    text-decoration: underline;
+}
+
+.completed {
+    text-decoration: line-through;
+    background-color: #d1ecf1;
+}

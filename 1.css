@@ -55,13 +55,14 @@ nav ul li a:hover {
 }
 
 
+
 main {
     padding: 20px;
 }
 
 
 .product-gallery {
-    display: flex;
+    display: flex;    
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -69,6 +70,42 @@ main {
 .product-gallery img {
     width: calc(25% - 20px); 
     height: auto;
+}
+
+main {
+    padding: 1rem;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    width: calc(33% - 2rem); /* 根据需要调整宽度 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 5px 5px 0 0; /* 圆角效果仅应用于图片顶部 */
+}
+
+.product h2 {
+    margin-top: 0.5rem;
+}
+
+.product p {
+    margin: 0.5rem 0;
+    color: #555;
 }
 
 
@@ -81,7 +118,56 @@ footer {
     width: 100%;
     bottom: 0;
 }
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 60px 0;
+}
 
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.mission-values, .team-expertise, .iphone-story {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mission, .values {
+    margin-bottom: 20px;
+}
+
+.values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values li {
+    background: url('bullet.png') no-repeat left center; /* 可选：使用自定义项目符号 */
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
 
 .hover-button {
     background-color: #4CAF50;
@@ -97,8 +183,60 @@ footer {
     background-color: #45a049;
     transition: background-color 0.3s ease; 
 }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
 
+main {
+    padding: 2rem;
+}
+section {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+article {
+    margin-bottom: 1rem;
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+
+.read-more {
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -113,4 +251,13 @@ th, td {
     padding: 10px;
     text-align: center;
 }
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 
+footer p {
+    margin: 0;
+}

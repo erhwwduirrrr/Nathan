@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮单击计数器</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #clickCount {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #0f07b0;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickMeButton">Click Me</button>
+    <div id="clickCount">Total Clicks: 0</div>
+
+    <script>
+        
+        const clickMeButton = document.getElementById('clickMeButton');
+        const clickCountDiv = document.getElementById('clickCount');
+
+       
+        let clickCount = 0;
+
+       
+        clickMeButton.addEventListener('click', () => {
+            
+            clickCount++;
+            
+            clickCountDiv.textContent = `Total Clicks: ${clickCount}`;
+        });
+    </script>
+</body>
+</html>

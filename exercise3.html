@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .filter-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .filter-button:hover {
+            background-color: #0056b3;
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .image-item {
+            flex: 1 1 200px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+        .image-placeholder {
+            width: 100%;
+            padding-bottom: 75%; 
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>exercise 3：Dynamic Image Library</h1>
+       
+        <div class="filter-buttons">
+            <button class="filter-button" onclick="filterImages('all')">all</button>
+            <button class="filter-button" onclick="filterImages('nature')">nature</button>
+            <button class="filter-button" onclick="filterImages('city')">city</button>
+            <button class="filter-button" onclick="filterImages('animals')">animal</button>
+        </div>
+        <div class="image-grid" id="imageGrid">
+            <div class="image-item" data-category="nature">
+                <div class="image-placeholder" style="background-image: url('nature.JPG');"></div>
+            </div>
+            <div class="image-item" data-category="city">
+                <div class="image-placeholder" style="background-image: url('city1.JPG');"></div>
+            </div>
+            <div class="image-item" data-category="animals">
+                <div class="image-placeholder" style="background-image: url('animal1.PNG.JPG');"></div>
+            </div>
+            <div class="image-item" data-category="city">
+                <div class="image-placeholder" style="background-image: url('city2.JPG');"></div>
+            </div>
+            <div class="image-item" data-category="animals">
+                <div class="image-placeholder" style="background-image: url('animal2.JPG');"></div>
+            </div>
+            <div class="image-item" data-category="nature">
+                <div class="image-placeholder" style="background-image: url('animal3.JPG');"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterImages(category) {
+            const images = document.querySelectorAll('.image-item');
+            images.forEach(image => {
+                if (category === 'all' || image.dataset.category === category) {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

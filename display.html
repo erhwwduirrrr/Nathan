@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Display</title>
+    <script>
+        // Function to get URL parameters
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Display form data on page load
+        window.onload = function() {
+            const field1 = getParameterByName('field1');
+            const field2 = getParameterByName('field2');
+            const field3 = getParameterByName('field3');
+
+            document.getElementById('field1-value').textContent = field1 || 'Not provided';
+            document.getElementById('field2-value').textContent = field2 || 'Not provided';
+            document.getElementById('field3-value').textContent = field3 || 'Not provided';
+        };
+    </script>
+</head>
+<body>
+    <h1>Form Data Display</h1>
+    <p><strong>Field 1:</strong> <span id="field1-value"></span></p>
+    <p><strong>Field 2:</strong> <span id="field2-value"></span></p>
+    <p><strong>Field 3:</strong> <span id="field3-value"></span></p>
+</body>
+</html>

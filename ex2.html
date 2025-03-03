@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Management</title>
+    <script>
+        function setCookie() {
+           
+            const name = prompt("请输入Cookie值：");
+            if (name) {
+                const date = new Date();
+                date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); 
+                const expires = "expires=" + date.toUTCString();
+                document.cookie = "user=" + name + ";" + expires + ";path=/";
+                alert("Cookie已设置！");
+            }
+        }
+
+        function readCookie() {
+           
+            const x = document.cookie;
+            if (x) {
+                alert("Cookie值为: " + x);
+            } else {
+                alert("未找到Cookie！");
+            }
+        }
+
+        function deleteCookie() {
+           
+            document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            alert("Cookie已销毁！");
+        }
+    </script>
+</head>
+<body>
+    <h1>Cookie Management Page</h1>
+    <button onclick="setCookie()">设置Cookie</button>
+    <button onclick="readCookie()">读取Cookie</button>
+    <button onclick="deleteCookie()">销毁Cookie</button>
+</body>
+</html>

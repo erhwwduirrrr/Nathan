@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM in Client-Side Scripting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .demo {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Role of the Document Object Model (DOM) in Client-Side Scripting</h1>
+
+    <div class="section">
+        <p>
+            The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+        </p>
+        <p>
+            The DOM is essential in client-side scripting (such as JavaScript) because it allows developers to dynamically manipulate the content and structure of a webpage without reloading the page. This leads to more interactive and responsive user experiences.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Demo 1: Changing Content Dynamically</h2>
+        <div class="demo">
+            <p id="demo1-content">This is the original content.</p>
+            <button onclick="changeContent()">Change Content</button>
+            <script>
+                function changeContent() {
+                    // Using DOM to change the content of the paragraph
+                    document.getElementById("demo1-content").textContent = "Content changed using DOM!";
+                }
+            </script>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Demo 2: Adding and Removing Elements</h2>
+        <div class="demo">
+            <ul id="demo2-list">
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+            <button onclick="addItem()">Add Item</button>
+            <button onclick="removeItem()">Remove Last Item</button>
+            <script>
+                function addItem() {
+                    // Using DOM to add a new item to the list
+                    const list = document.getElementById("demo2-list");
+                    const newItem = document.createElement("li");
+                    newItem.textContent = "New Item";
+                    list.appendChild(newItem);
+                }
+
+                function removeItem() {
+                    // Using DOM to remove the last item from the list
+                    const list = document.getElementById("demo2-list");
+                    if (list.children.length > 0) {
+                        list.removeChild(list.lastElementChild);
+                    } else {
+                        alert("No items to remove!");
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

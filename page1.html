@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie Manager</title>
+</head>
+<body>
+    <button onclick="setCookie()">设置 Cookie</button>
+    <button onclick="deleteCookie()">销毁 Cookie</button>
+
+    <script>
+        function setCookie() {
+            const name = prompt("请输入您的姓名：");
+            if (name) {
+                document.cookie = "username=" + encodeURIComponent(name) + ";max-age=3600;path=/";
+                alert("Cookie 设置成功！");
+            }
+        }
+
+        function deleteCookie() {
+            document.cookie = "username=;max-age=0;path=/";
+            alert("Cookie 已销毁！");
+        }
+    </script>
+</body>
+</html>
